@@ -1,4 +1,6 @@
 import React from 'react';
+import GoogleMapReact from 'google-map-react';
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class Home extends React.Component {
   static async fetchData(match, search, showError) {
@@ -11,9 +13,27 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>this is Home Page.</div>
+      // Important! Always set the container height explicitly
+      <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{key: "AIzaSyD0rYzImyIdiTBNNNLF_8bN1mruuoKhaMY", language: 'en'}}
+          defaultCenter={{
+                lat: 47.62,
+                lng: -122.33
+              }}
+          defaultZoom={11}
+        >
+          <AnyReactComponent
+            lat={47.955413}
+            lng={-122.337844}
+            text="My Marker"
+          />
+        </GoogleMapReact>
+      </div>
     );
   }
 }
+
+
 
 export default Home;
