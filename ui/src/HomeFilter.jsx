@@ -17,19 +17,6 @@ class HomeFilter extends React.Component {
 
   render() {
     return (
-    // <div>
-    //   <div>This left part is for filter</div>
-    //   <br />
-    //   <br />
-    //   <div>start date</div>
-    //   <DateAndTimePickers />
-    //   <div>end date</div>
-    //   <DateAndTimePickers />
-    //   <div>District</div>
-    //   input
-    //   <div>Beat</div>
-    // </div>
-
       <Panel>
         <Panel.Heading>
           <Panel.Title>This is for filter</Panel.Title>
