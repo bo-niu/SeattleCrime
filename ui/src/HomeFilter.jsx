@@ -13,26 +13,43 @@ class HomeFilter extends React.Component {
 
   constructor() {
     super();
+    this.onDistrictChange = this.onDistrictChange.bind(this);
+    this.onBeatChange = this.onBeatChange.bind(this);
+  }
+
+  onDistrictChange(e) {
+    const { setDistrict } = this.props;
+    setDistrict(e.target.value);
+  }
+
+  onBeatChange(e) {
+    const { setBeat } = this.props;
+    setBeat(e.target.value);
   }
 
   render() {
+    const {
+      startDate, endDate, district, beat,
+      setStartDate, setEndDate,
+      onApplyFilter,
+    } = this.props;
     return (
       <Panel>
         <Panel.Heading>
           <Panel.Title>This is for filter</Panel.Title>
         </Panel.Heading>
         <Panel.Body>
-          <Form horizontal onSubmit={this.handleSubmit}>
+          <Form horizontal onSubmit={onApplyFilter}>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={3}>StartDate</Col>
               <Col sm={9}>
-                <DateAndTimePickers />
+                <DateAndTimePickers value={startDate} setValue={setStartDate} />
               </Col>
             </FormGroup>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={3}>EndDate</Col>
               <Col sm={9}>
-                <DateAndTimePickers />
+                <DateAndTimePickers value={endDate} setValue={setEndDate} />
               </Col>
             </FormGroup>
             <FormGroup>
@@ -41,13 +58,13 @@ class HomeFilter extends React.Component {
                 <FormControl
                   componentClass="select"
                   name="District"
-                  value="District"
-                  onChange={this.onChange}
+                  value={district}
+                  onChange={this.onDistrictChange}
                 >
-                  <option value="New">New</option>
-                  <option value="Assigned">Assigned</option>
-                  <option value="Fixed">Fixed</option>
-                  <option value="Closed">Closed</option>
+                  <option value="E">E</option>
+                  <option value="G">G</option>
+                  <option value="Q">Q</option>
+                  <option value="B">B</option>
                 </FormControl>
               </Col>
             </FormGroup>
@@ -57,13 +74,13 @@ class HomeFilter extends React.Component {
                 <FormControl
                   componentClass="select"
                   name="Beat"
-                  value="Beat"
-                  onChange={this.onChange}
+                  value={beat}
+                  onChange={this.onBeatChange}
                 >
-                  <option value="New">New</option>
-                  <option value="Assigned">Assigned</option>
-                  <option value="Fixed">Fixed</option>
-                  <option value="Closed">Closed</option>
+                  <option value="E2">E2</option>
+                  <option value="G2">G2</option>
+                  <option value="Q2">Q2</option>
+                  <option value="B2">B2</option>
                 </FormControl>
               </Col>
             </FormGroup>
