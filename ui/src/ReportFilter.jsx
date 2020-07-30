@@ -72,7 +72,7 @@ class ReportFilter extends React.Component {
               >
                 <option value="E">E</option>
                 <option value="N">N</option>
-                <option value="SE">S</option>
+                <option value="SE">SE</option>
                 <option value="SW">SW</option>
                 <option value="W">W</option>
               </FormControl>
