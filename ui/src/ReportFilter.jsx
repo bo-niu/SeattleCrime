@@ -32,13 +32,12 @@ class ReportFilter extends React.Component {
                 value="Year"
                 onChange={this.onChange}
               >
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
                 <option value="2011">2011</option>
                 <option value="2012">2012</option>
                 <option value="2013">2013</option>
                 <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
               </FormControl>
             </Col>
           </FormGroup>
@@ -52,11 +51,15 @@ class ReportFilter extends React.Component {
                 onChange={this.onChange}
               >
                 <option value="Assault">Assault</option>
+                <option value="Bias Incident">Bias Incident</option>
+                <option value="Disorderly Conduct">Disorderly Conduct</option>
+                <option value="DUI">DUI</option>
                 <option value="Burglary">Burglary</option>
                 <option value="Homicide">Homicide</option>
-                <option value="Larceny-Theft">Larceny-Theft</option>
-                <option value="Motor Vehicle Theft">Motor Vehicle Theft</option>
-                <option value="Rape">Rape</option>
+                <option value="Injury">Injury</option>
+                <option value="Liquor Violation">Liquor Violation</option>
+                <option value="Narcotics">Narcotics</option>
+                <option value="Pickpocket">Pickpocket</option>
                 <option value="Robbery">Robbery</option>
               </FormControl>
             </Col>
@@ -66,14 +69,26 @@ class ReportFilter extends React.Component {
             <Col sm={9}>
               <FormControl
                 componentClass="select" multiple
-                name="Precint"
-                value="Precint"
+                name="District"
+                value="District"
                 onChange={this.onChange}
               >
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
                 <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="J">J</option>
+                <option value="K">K</option>
+                <option value="L">L</option>
+                <option value="M">M</option>
                 <option value="N">N</option>
-                <option value="SE">SE</option>
-                <option value="SW">SW</option>
+                <option value="O">O</option>
+                <option value="Q">Q</option>
+                <option value="R">W</option>
+                <option value="S">S</option>
+                <option value="U">U</option>
                 <option value="W">W</option>
               </FormControl>
             </Col>
