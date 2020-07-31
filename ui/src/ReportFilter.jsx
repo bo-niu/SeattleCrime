@@ -13,42 +13,38 @@ class ReportFilter extends React.Component {
 
   constructor() {
     super();
+    this.onCrimeChange = this.onCrimeChange.bind(this);
+    this.onDistrictChange = this.onDistrictChange.bind(this);
+  }
+
+  onCrimeChange(e) {
+    const { setCrime } = this.props;
+    setCrime(e.target.value);
+  }
+
+  onDistrictChange(e) {
+    const { setDistrict } = this.props;
+    setDistrict(e.target.value);
   }
 
   render() {
+    const {crime, district, onApplyFilter} = this.props;
+
     return (
       <Panel>
         <Panel.Heading>
           <Panel.Title>Report Filter</Panel.Title>
         </Panel.Heading>
         <Panel.Body>
-          <Form horizontal onSubmit={this.handleSubmit}>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Year</Col>
-            <Col sm={9}>
-              <FormControl
-                componentClass="select"
-                name="Year"
-                value="Year"
-                onChange={this.onChange}
-              >
-                <option value="2011">2011</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-              </FormControl>
-            </Col>
-          </FormGroup>
+          <Form horizontal onSubmit={this.onApplyFilter}>
           <FormGroup>
             <Col componentClass={ControlLabel} sm={3}>Crime Type</Col>
             <Col sm={9}>
               <FormControl
                 componentClass="select" multiple
                 name="Crime Type"
-                value="Crime Type"
-                onChange={this.onChange}
+                value={crime}
+                onChange={this.onCrimeChange}
               >
                 <option value="Assault">Assault</option>
                 <option value="Bias Incident">Bias Incident</option>
@@ -65,13 +61,13 @@ class ReportFilter extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>Precint</Col>
+            <Col componentClass={ControlLabel} sm={3}>District</Col>
             <Col sm={9}>
               <FormControl
                 componentClass="select" multiple
                 name="District"
-                value="District"
-                onChange={this.onChange}
+                value={district}
+                onChange={this.onDistrictChange}
               >
                 <option value="B">B</option>
                 <option value="C">C</option>
