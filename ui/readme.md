@@ -9,8 +9,11 @@ For iteration 1, we started our project using the boilerplate code from the Pro-
 Team Contributions:
 
 Bo:
+
 Chris: Update GraphQL schema, worked on API for ReportFilter and the UI for the Reports page, and API Handler.
-Yifei:
+
+Yifei: Made Google map component functional and worked on mongodb about users and comments.
+
 Surendra: Worked on Discussion page to add comments on button click, working on connecting state to DB.
 
 ## Iteration 1 Screenshot:
