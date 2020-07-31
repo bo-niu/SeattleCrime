@@ -13,10 +13,10 @@ class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      startDate: new Date('2000-01-01T00:00:00'),
-      endDate: new Date('2000-02-01T00:00:00'),
-      district: 'G',
-      beat: 'G2',
+      startDate: new Date('2016-08-21T01:00:00'),
+      endDate: new Date('2016-08-21T23:00:00'),
+      district: 'B',
+      beat: 'B2',
       crimes: [],
     };
     this.setStartDate = this.setStartDate.bind(this);
@@ -48,8 +48,9 @@ class Home extends React.Component {
     const result = await graphQLFetch(query, {
       input: queryParams,
     }, null);
-    console.log('result get!!!!!!');
-    console.log(result);
+    console.log('result get!!!!!!   result.filtrateCrimes:');
+    console.log(result.filtrateCrimes);
+    this.setState({ crimes: result.filtrateCrimes });
   }
 
   setStartDate(date) {
