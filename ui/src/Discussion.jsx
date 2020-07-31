@@ -16,6 +16,7 @@ class Discussion extends React.Component {
       <div className="form-group">
         <label discuss="commentbox">Comment</label>
         <textarea className="form-control" id="commentbox" rows="5" />
+        <button style={{ margin: 10 }}>Add Comment</button>
       </div>
     );
   }
