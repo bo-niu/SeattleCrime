@@ -36,7 +36,7 @@ Since in Iteration 1, we are not required to deploy our project to Heroku, so we
 
 ### Procedure
 
-1. Download the release version of the iter1 of both the UI repo and API repo.
+1. Download the release version of the iter1 of both the [UI](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/releases/tag/iter1) repo and [API](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_API/releases/tag/iter1) repo.
 2. For UI repo:
    1. `npm install`
    2. `npm run compile`
