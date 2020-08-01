@@ -52,7 +52,7 @@ function Footer() {
       <p className="text-center">
         Full source code available at this
         {' '}
-        <a href="https://github.com/vasansr/pro-mern-stack-2">
+        <a href="https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI">
           GitHub repository
         </a>
       </p>
