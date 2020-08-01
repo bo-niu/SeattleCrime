@@ -55,3 +55,6 @@ Since in Iteration 1, we are not required to deploy our project to Heroku, so we
 3. Currently the filter on the Report page doesn't work correctly.
 
 ## Iteration 1 Screenshot:
+![iter1-1](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-1.png)
+![iter1-2](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-2.png)
+![iter1-3](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-3.png)
