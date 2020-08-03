@@ -18,8 +18,8 @@ class HomeFilter extends React.Component {
       district: vars.district,
       beat: vars.beat,
     };
-    // this.onDistrictChange = this.onDistrictChange.bind(this);
-    // this.onBeatChange = this.onBeatChange.bind(this);
+    this.onDistrictChange = this.onDistrictChange.bind(this);
+    this.onBeatChange = this.onBeatChange.bind(this);
     this.setStartDate = this.setStartDate.bind(this);
     this.setEndDate = this.setEndDate.bind(this);
     this.onApplyFilter = this.onApplyFilter.bind(this);
@@ -39,7 +39,7 @@ class HomeFilter extends React.Component {
     const params = new URLSearchParams();
     const {
       startDate, endDate, district, beat,
-    } = this.props;
+    } = this.state;
     params.set('startDate', startDate.toISOString());
     params.set('endDate', endDate.toISOString());
     params.set('district', district);
