@@ -2,24 +2,25 @@ import React from 'react';
 import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import { withRouter } from 'react-router-dom';
 /**
  * This component comes from material-ui
  * documentation:
  * https://material-ui.com/components/pickers/
  */
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   container: {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//   },
+//   textField: {
+//     marginLeft: theme.spacing(1),
+//     marginRight: theme.spacing(1),
+//     width: 200,
+//   },
+// }));
 
-export default class DateAndTimePickers extends React.Component {
+class DateAndTimePickers extends React.Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
@@ -54,6 +55,8 @@ export default class DateAndTimePickers extends React.Component {
     );
   }
 }
+
+export default withRouter(DateAndTimePickers);
 
 // export default function DateAndTimePickers(props) {
 //   const classes = useStyles();

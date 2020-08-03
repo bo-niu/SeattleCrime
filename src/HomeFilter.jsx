@@ -3,53 +3,105 @@ import {
   Col, Panel, Form, FormGroup, FormControl, ControlLabel,
   ButtonToolbar, Button,
 } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import { withRouter } from 'react-router-dom';
 import DateAndTimePickers from './DateAndTimePickers.jsx';
+import getVarsFromHomeURL from './util.js';
 
 class HomeFilter extends React.Component {
-  static async fetchData(match, search, showError) {
-    return null;
+  constructor(props) {
+    super(props);
+    const { location: { search } } = props;
+    const vars = getVarsFromHomeURL(search);
+    this.state = {
+      startDate: vars.startDate,
+      endDate: vars.endDate,
+      district: vars.district,
+      beat: vars.beat,
+    };
+    // this.onDistrictChange = this.onDistrictChange.bind(this);
+    // this.onBeatChange = this.onBeatChange.bind(this);
+    this.setStartDate = this.setStartDate.bind(this);
+    this.setEndDate = this.setEndDate.bind(this);
+    this.onApplyFilter = this.onApplyFilter.bind(this);
   }
 
-  constructor() {
-    super();
-    this.onDistrictChange = this.onDistrictChange.bind(this);
-    this.onBeatChange = this.onBeatChange.bind(this);
+  componentDidUpdate(prevProps) {
+    const { location: { search: prevSearch } } = prevProps;
+    const { location: { search } } = this.props;
+    if (prevSearch !== search) {
+      this.setForm();
+    }
+  }
+
+  onApplyFilter(e) {
+    e.preventDefault();
+    const { history, urlBase } = this.props;
+    const params = new URLSearchParams();
+    const {
+      startDate, endDate, district, beat,
+    } = this.props;
+    params.set('startDate', startDate.toISOString());
+    params.set('endDate', endDate.toISOString());
+    params.set('district', district);
+    params.set('beat', beat);
+    const search = params.toString ? `?${params.toString()}` : '';
+    history.push({ pathname: urlBase, search });
   }
 
   onDistrictChange(e) {
-    const { setDistrict } = this.props;
-    setDistrict(e.target.value);
+    this.setDistrict(e.target.value);
   }
 
   onBeatChange(e) {
-    const { setBeat } = this.props;
-    setBeat(e.target.value);
+    this.setBeat(e.target.value);
+  }
+
+  setStartDate(date) {
+    this.setState({ startDate: date });
+  }
+
+  setEndDate(date) {
+    this.setState({ endDate: date });
+  }
+
+  setDistrict(dist) {
+    this.setState({ district: dist });
+  }
+
+  setBeat(b) {
+    this.setState({ beat: b });
+  }
+
+  setForm() {
+    const { location: { search } } = this.props;
+    const vars = getVarsFromHomeURL(search);
+    this.setStartDate(vars.startDate);
+    this.setEndDate(vars.endDate);
+    this.setDistrict(vars.district);
+    this.setBeat(vars.beat);
   }
 
   render() {
     const {
       startDate, endDate, district, beat,
-      setStartDate, setEndDate,
-      onApplyFilter,
-    } = this.props;
+    } = this.state;
     return (
       <Panel>
         <Panel.Heading>
           <Panel.Title>This is for filter</Panel.Title>
         </Panel.Heading>
         <Panel.Body>
-          <Form horizontal onSubmit={onApplyFilter}>
+          <Form horizontal onSubmit={this.onApplyFilter}>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={3}>StartDate</Col>
               <Col sm={9}>
-                <DateAndTimePickers value={startDate} setValue={setStartDate} />
+                <DateAndTimePickers value={startDate} setValue={this.setStartDate} />
               </Col>
             </FormGroup>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={3}>EndDate</Col>
               <Col sm={9}>
-                <DateAndTimePickers value={endDate} setValue={setEndDate} />
+                <DateAndTimePickers value={endDate} setValue={this.setEndDate} />
               </Col>
             </FormGroup>
             <FormGroup>
@@ -103,4 +155,4 @@ class HomeFilter extends React.Component {
   }
 }
 
-export default HomeFilter;
+export default withRouter(HomeFilter);

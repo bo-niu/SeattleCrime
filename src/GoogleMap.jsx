@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker.jsx';
@@ -5,14 +6,6 @@ import Marker from './Marker.jsx';
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class GoogleMap extends React.Component {
-  static async fetchData(match, search, showError) {
-    return null;
-  }
-
-  constructor() {
-    super();
-  }
-
   render() {
     const { crimes } = this.props;
     console.log('crimes in google map:');
