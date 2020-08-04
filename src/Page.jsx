@@ -63,7 +63,7 @@ function Footer() {
 export default class Page extends React.Component {
   static async fetchData(cookie) {
     const query = `query{ user {
-      signedIn givenName
+      signedIn givenName email
     }}`;
     const data = await graphQLFetch(query, null, null, cookie);
     return data;

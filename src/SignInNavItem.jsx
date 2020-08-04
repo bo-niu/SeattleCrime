@@ -3,6 +3,7 @@ import {
   NavItem, Modal, Button, NavDropdown, MenuItem,
 } from 'react-bootstrap';
 import withToast from './withToast.jsx';
+import graphQLFetch from './graphQLFetch.js';
 
 class SigninNavItem extends React.Component {
   constructor(props) {
@@ -36,6 +37,17 @@ class SigninNavItem extends React.Component {
     try {
       const auth2 = window.gapi.auth2.getAuthInstance();
       const googleUser = await auth2.signIn();
+      const userName = googleUser.getBasicProfile().getGivenName();
+      const userEmail = googleUser.getBasicProfile().getEmail();
+      const input = {name: userName, email: userEmail};
+      const query = `mutation userAdd($input: UserInput!) {
+        userAdd(input: $input) {
+          name
+          email
+        }
+      }
+      `;
+      const data = await graphQLFetch(query, {input});
       googleToken = googleUser.getAuthResponse().id_token;
     } catch (error) {
       showError(`Error authenticating with Google: ${error.error}`);
@@ -51,10 +63,10 @@ class SigninNavItem extends React.Component {
       });
       const body = await response.text();
       const result = JSON.parse(body);
-      const { signedIn, givenName } = result;
-
+      const { signedIn, givenName, email } = result;
+      
       const { onUserChange } = this.props;
-      onUserChange({ signedIn, givenName });
+      onUserChange({ signedIn, givenName, email });
     } catch (error) {
       showError(`Error signing into the app: ${error}`);
     }
@@ -71,7 +83,7 @@ class SigninNavItem extends React.Component {
       const auth2 = window.gapi.auth2.getAuthInstance();
       await auth2.signOut();
       const { onUserChange } = this.props;
-      onUserChange({ signedIn: false, givenName: '' });
+      onUserChange({ signedIn: false, givenName: '', email: '' });
     } catch (error) {
       showError(`Error signing out: ${error}`);
     }
@@ -95,7 +107,7 @@ class SigninNavItem extends React.Component {
     const { user } = this.props;
     if (user.signedIn) {
       return (
-        <NavDropdown title={user.givenName} id="user">
+        <NavDropdown title={user.email} id="user">
           <MenuItem onClick={this.signOut}>Sign out</MenuItem>
         </NavDropdown>
       );
