@@ -6,6 +6,21 @@ import {
 import { withRouter } from 'react-router-dom';
 import DateAndTimePickers from './DateAndTimePickers.jsx';
 import getVarsFromHomeURL from './util.js';
+// import { func } from 'prop-types';
+
+function getBeatOption(district) {
+  const beatList = [`${district}1`, `${district}2`, `${district}3`];
+  const newList = beatList.map(beat => <option value={beat}>{beat}</option>);
+  newList.unshift(<option value="All">All</option>);
+  return newList;
+}
+
+function getDistrictOptions() {
+  const districtList = ['B', 'C', 'D', 'E', 'F', 'G', 'J', 'K', 'L', 'M', 'N', 'O', 'Q', 'R', 'S', 'U', 'W'];
+  const newList = districtList.map(dist => <option value={dist}>{dist}</option>);
+  newList.unshift(<option value="All">All</option>);
+  return newList;
+}
 
 class HomeFilter extends React.Component {
   constructor(props) {
@@ -54,6 +69,11 @@ class HomeFilter extends React.Component {
     this.setDistrict(e.target.value);
     if (e.target.value === 'All') this.setState({ beatDisabled: true });
     else this.setState({ beatDisabled: false });
+    const { beat } = this.state;
+    const currentDistrict = e.target.value;
+    if (currentDistrict !== 'All' && currentDistrict !== beat[0]) {
+      this.setState({ beat: 'All' });
+    }
   }
 
   onBeatChange(e) {
@@ -91,6 +111,9 @@ class HomeFilter extends React.Component {
     const {
       startDate, endDate, district, beat, beatDisabled,
     } = this.state;
+    const { disabled } = this.props;
+    const beatOptions = getBeatOption(district);
+    const districtOptions = getDistrictOptions();
     return (
       <Panel>
         <Panel.Heading>
@@ -119,11 +142,12 @@ class HomeFilter extends React.Component {
                   value={district}
                   onChange={this.onDistrictChange}
                 >
-                  <option value="All">All</option>
+                  {/* <option value="All">All</option>
                   <option value="E">E</option>
                   <option value="G">G</option>
                   <option value="Q">Q</option>
-                  <option value="B">B</option>
+                  <option value="B">B</option> */}
+                  {districtOptions}
                 </FormControl>
               </Col>
             </FormGroup>
@@ -137,17 +161,18 @@ class HomeFilter extends React.Component {
                   onChange={this.onBeatChange}
                   disabled={beatDisabled}
                 >
-                  <option value="All">All</option>
+                  {/* <option value="All">All</option>
                   <option value="E2">E2</option>
                   <option value="G2">G2</option>
                   <option value="Q2">Q2</option>
-                  <option value="B2">B2</option>
+                  <option value="B2">B2</option> */}
+                  {beatOptions}
                 </FormControl>
               </Col>
             </FormGroup>
             <ButtonToolbar>
               <Button
-                disabled={false}
+                disabled={disabled}
                 bsStyle="primary"
                 type="submit"
               >

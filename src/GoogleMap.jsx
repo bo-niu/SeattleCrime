@@ -9,7 +9,7 @@ class GoogleMap extends React.Component {
   render() {
     const { crimes } = this.props;
     // console.log('crimes in google map:');
-    console.log(crimes);
+    // console.log(crimes);
     const multipleMarkers = (
       crimes.map(crime => (
         <Marker
@@ -29,7 +29,7 @@ class GoogleMap extends React.Component {
             lat: 47.62,
             lng: -122.33,
           }}
-          defaultZoom={11}
+          defaultZoom={12}
         >
           {multipleMarkers}
         </GoogleMapReact>

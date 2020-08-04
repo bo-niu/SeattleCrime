@@ -15,7 +15,8 @@ class Marker extends React.Component {
     return (
       <div
         className="marker"
-        style={{ backgroundColor: color, cursor: 'pointer' }}
+        // style={{ backgroundColor: color, cursor: 'pointer' }}
+        style={{ backgroundImage: 'url("/markers/arrest.png")', cursor: 'pointer' }}
         title={name}
         role="button"
         onClick={this.onClick}

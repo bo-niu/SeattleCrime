@@ -45,6 +45,7 @@ class Home extends React.Component {
     } else {
       this.state = { crimes: [] };
     }
+    this.state.filterDisabled = false;
     delete store.initialData;
   }
 
@@ -65,6 +66,7 @@ class Home extends React.Component {
 
   async loadData() {
     const { location: { search }, match, showError } = this.props;
+    this.setState({ filterDisabled: true });
     const data = await Home.fetchData(match, search, showError);
     if (data) {
       this.setState({ crimes: data.filtrateCrimes });
@@ -72,16 +74,17 @@ class Home extends React.Component {
     if (data.count > crimeLimit) {
       showError(`We found ${data.count} crimes in the range, which exceeds the limit of cases showing on the map (${crimeLimit}). Please reduce your searching range.`);
     }
+    this.setState({ filterDisabled: false });
   }
 
   render() {
-    const { crimes } = this.state;
+    const { crimes, filterDisabled } = this.state;
     if (crimes == null) return null;
     return (
       <div>
         <Row>
           <Col lg={3}>
-            <HomeFilter />
+            <HomeFilter disabled={filterDisabled} />
           </Col>
           <Col lg={9}><GoogleMap crimes={crimes} /></Col>
         </Row>
