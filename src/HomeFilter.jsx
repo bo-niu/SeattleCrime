@@ -10,14 +10,21 @@ import getVarsFromHomeURL from './util.js';
 
 function getBeatOption(district) {
   const beatList = [`${district}1`, `${district}2`, `${district}3`];
-  const newList = beatList.map(beat => <option value={beat}>{beat}</option>);
+  const newList = beatList.map((beat, i) => <option value={beat} key={i.toString()}>{beat}</option>);
   newList.unshift(<option value="All">All</option>);
   return newList;
 }
 
 function getDistrictOptions() {
   const districtList = ['B', 'C', 'D', 'E', 'F', 'G', 'J', 'K', 'L', 'M', 'N', 'O', 'Q', 'R', 'S', 'U', 'W'];
-  const newList = districtList.map(dist => <option value={dist}>{dist}</option>);
+  const newList = districtList.map((dist, i) => <option value={dist} key={i.toString()}>{dist}</option>);
+  newList.unshift(<option value="All">All</option>);
+  return newList;
+}
+
+function getTypeOptions() {
+  const typeList = ['TRESPASS', 'BIKE THEFT', 'ROBBERY', 'NARCOTICS', 'DISTURBANCE', 'SHOPLIFTING', 'THREATS', 'STOLEN PROPERTY', 'WARRANT ARREST', 'FRAUD', 'ASSAULT', 'VEHICLE THEFT', 'PROPERTY DAMAGE', 'BURGLARY', 'CAR PROWL'];
+  const newList = typeList.map((type, i) => <option value={type} key={i.toString()}>{type}</option>);
   newList.unshift(<option value="All">All</option>);
   return newList;
 }
@@ -32,6 +39,7 @@ class HomeFilter extends React.Component {
       endDate: vars.endDate,
       district: vars.district,
       beat: vars.beat,
+      type: vars.type,
     };
     if (vars.district === 'All') this.state.beatDisabled = true;
     else this.state.beatDisabled = false;
@@ -40,6 +48,8 @@ class HomeFilter extends React.Component {
     this.setStartDate = this.setStartDate.bind(this);
     this.setEndDate = this.setEndDate.bind(this);
     this.onApplyFilter = this.onApplyFilter.bind(this);
+    this.onTypeChange = this.onTypeChange.bind(this);
+    this.setType = this.setType.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -55,12 +65,13 @@ class HomeFilter extends React.Component {
     const { history, urlBase } = this.props;
     const params = new URLSearchParams();
     const {
-      startDate, endDate, district, beat,
+      startDate, endDate, district, beat, type,
     } = this.state;
     params.set('startDate', startDate.toISOString());
     params.set('endDate', endDate.toISOString());
     params.set('district', district);
     params.set('beat', beat);
+    params.set('type', type);
     const search = params.toString ? `?${params.toString()}` : '';
     history.push({ pathname: urlBase, search });
   }
@@ -80,6 +91,10 @@ class HomeFilter extends React.Component {
     this.setBeat(e.target.value);
   }
 
+  onTypeChange(e) {
+    this.setType(e.target.value);
+  }
+
   setStartDate(date) {
     this.setState({ startDate: date });
   }
@@ -96,6 +111,10 @@ class HomeFilter extends React.Component {
     this.setState({ beat: b });
   }
 
+  setType(t) {
+    this.setState({ type: t });
+  }
+
   setForm() {
     const { location: { search } } = this.props;
     const vars = getVarsFromHomeURL(search);
@@ -103,17 +122,19 @@ class HomeFilter extends React.Component {
     this.setEndDate(vars.endDate);
     this.setDistrict(vars.district);
     this.setBeat(vars.beat);
+    this.setType(vars.type);
     if (vars.district === 'All') this.setState({ beatDisabled: true });
     else this.setState({ beatDisabled: false });
   }
 
   render() {
     const {
-      startDate, endDate, district, beat, beatDisabled,
+      startDate, endDate, district, beat, beatDisabled, type,
     } = this.state;
     const { disabled } = this.props;
     const beatOptions = getBeatOption(district);
     const districtOptions = getDistrictOptions();
+    const typeOptions = getTypeOptions();
     return (
       <Panel>
         <Panel.Heading>
@@ -131,6 +152,19 @@ class HomeFilter extends React.Component {
               <Col componentClass={ControlLabel} sm={3}>EndDate</Col>
               <Col sm={9}>
                 <DateAndTimePickers value={endDate} setValue={this.setEndDate} />
+              </Col>
+            </FormGroup>
+            <FormGroup>
+              <Col componentClass={ControlLabel} sm={3}>Type</Col>
+              <Col sm={9}>
+                <FormControl
+                  componentClass="select"
+                  name="Type"
+                  value={type}
+                  onChange={this.onTypeChange}
+                >
+                  {typeOptions}
+                </FormControl>
               </Col>
             </FormGroup>
             <FormGroup>

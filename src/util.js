@@ -11,6 +11,8 @@ function getVarsFromHomeURL(search) {
   else vars.district = 'B';
   if (params.get('beat')) vars.beat = params.get('beat');
   else vars.beat = 'B2';
+  if (params.get('type')) vars.type = params.get('type');
+  else vars.type = 'All';
   return vars;
 }
 

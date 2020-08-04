@@ -25,7 +25,7 @@ class Home extends React.Component {
     } else {
       query = `query filtrateCrimes($input: FilterInput!) {
         filtrateCrimes(input: $input) {
-          OffenseType OffenseDescription ReportDate OffenseStartDate OffenseEndDate Block CensusTract Longitude Latitude
+          _id OffenseType OffenseDescription ReportDate OffenseStartDate OffenseEndDate Block CensusTract Longitude Latitude
         }
       }`;
       const data = await graphQLFetch(query, inputVars, showError);
