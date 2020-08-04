@@ -39,7 +39,7 @@ class SigninNavItem extends React.Component {
       const googleUser = await auth2.signIn();
       const userName = googleUser.getBasicProfile().getGivenName();
       const userEmail = googleUser.getBasicProfile().getEmail();
-      const input = {name: userName, email: userEmail};
+      const input = { name: userName, email: userEmail };
       const query = `mutation userAdd($input: UserInput!) {
         userAdd(input: $input) {
           name
@@ -47,7 +47,7 @@ class SigninNavItem extends React.Component {
         }
       }
       `;
-      const data = await graphQLFetch(query, {input});
+      const data = await graphQLFetch(query, { input });
       googleToken = googleUser.getAuthResponse().id_token;
     } catch (error) {
       showError(`Error authenticating with Google: ${error.error}`);
@@ -64,7 +64,7 @@ class SigninNavItem extends React.Component {
       const body = await response.text();
       const result = JSON.parse(body);
       const { signedIn, givenName, email } = result;
-      
+
       const { onUserChange } = this.props;
       onUserChange({ signedIn, givenName, email });
     } catch (error) {
