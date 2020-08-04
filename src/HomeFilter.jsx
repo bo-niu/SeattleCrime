@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import {
   Col, Panel, Form, FormGroup, FormControl, ControlLabel,
@@ -216,7 +217,13 @@ class HomeFilter extends React.Component {
           </Form>
         </Panel.Body>
         <Panel.Footer>
-          This is the Panel.Footer
+          <h2>How to use our website</h2>
+          <br />
+          <div>1. Apply the filter</div>
+          <br />
+          <div>2. Move the cursor to your interested crime record on the map, you will see the detailed information.</div>
+          <br />
+          <div>3. Click the crime icon and you will be redirected to the discussion page of that crime record.</div>
         </Panel.Footer>
       </Panel>
     );

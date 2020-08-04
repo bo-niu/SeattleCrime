@@ -24,6 +24,19 @@ function getImage(type) {
   }
 }
 
+function getCrimeDetail(crime) {
+  return `
+  Offense Type: ${crime.OffenseType}\n
+  Offense Description: ${crime.OffenseDescription}\n
+  Report Date: ${crime.ReportDate}\n
+  Offense Start Date: ${crime.OffenseStartDate}\n
+  Offense End Date: ${crime.OffenseEndDate}\n
+  Block: ${crime.Block}\n
+  2000 Census Tract: ${crime.CensusTract}\n
+  Longitude: ${crime.Longitude}\n
+  Latitude: ${crime.Latitude}
+  `;
+}
 
 class Marker extends React.Component {
   constructor() {
@@ -36,13 +49,13 @@ class Marker extends React.Component {
   }
 
   render() {
-    const { crime: { OffenseType } } = this.props;
+    const { crime } = this.props;
     return (
       <div
         className="marker"
         // style={{ backgroundColor: color, cursor: 'pointer' }}
-        style={{ backgroundImage: getImage(OffenseType), cursor: 'pointer' }}
-        title={`Offense Type: ${OffenseType}`}
+        style={{ backgroundImage: getImage(crime.OffenseType), cursor: 'pointer' }}
+        title={getCrimeDetail(crime)}
         role="button"
         onClick={this.onClick}
       />
