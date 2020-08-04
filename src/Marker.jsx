@@ -19,7 +19,6 @@ class Marker extends React.Component {
         title={name}
         role="button"
         onClick={this.onClick}
-        onKeyPress={onKeyPressHandler}
       />
     );
   }

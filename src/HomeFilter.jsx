@@ -18,6 +18,8 @@ class HomeFilter extends React.Component {
       district: vars.district,
       beat: vars.beat,
     };
+    if (vars.district === 'All') this.state.beatDisabled = true;
+    else this.state.beatDisabled = false;
     this.onDistrictChange = this.onDistrictChange.bind(this);
     this.onBeatChange = this.onBeatChange.bind(this);
     this.setStartDate = this.setStartDate.bind(this);
@@ -50,6 +52,8 @@ class HomeFilter extends React.Component {
 
   onDistrictChange(e) {
     this.setDistrict(e.target.value);
+    if (e.target.value === 'All') this.setState({ beatDisabled: true });
+    else this.setState({ beatDisabled: false });
   }
 
   onBeatChange(e) {
@@ -79,11 +83,13 @@ class HomeFilter extends React.Component {
     this.setEndDate(vars.endDate);
     this.setDistrict(vars.district);
     this.setBeat(vars.beat);
+    if (vars.district === 'All') this.setState({ beatDisabled: true });
+    else this.setState({ beatDisabled: false });
   }
 
   render() {
     const {
-      startDate, endDate, district, beat,
+      startDate, endDate, district, beat, beatDisabled,
     } = this.state;
     return (
       <Panel>
@@ -113,6 +119,7 @@ class HomeFilter extends React.Component {
                   value={district}
                   onChange={this.onDistrictChange}
                 >
+                  <option value="All">All</option>
                   <option value="E">E</option>
                   <option value="G">G</option>
                   <option value="Q">Q</option>
@@ -128,7 +135,9 @@ class HomeFilter extends React.Component {
                   name="Beat"
                   value={beat}
                   onChange={this.onBeatChange}
+                  disabled={beatDisabled}
                 >
+                  <option value="All">All</option>
                   <option value="E2">E2</option>
                   <option value="G2">G2</option>
                   <option value="Q2">Q2</option>
