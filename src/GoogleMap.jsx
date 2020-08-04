@@ -22,8 +22,8 @@ function getCrimeDetail(crime) {
 class GoogleMap extends React.Component {
   render() {
     const { crimes } = this.props;
-    console.log('crimes in google map:');
-    console.log(crimes);
+    // console.log('crimes in google map:');
+    // console.log(crimes);
     const multipleMarkers = (
       crimes.map(crime => (
         <Marker

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function getImage(type) {
-  console.log(`type: ${type}`);
+  // console.log(`type: ${type}`);
   switch (type) {
     case 'TRESPASS':
     case 'BIKE THEFT':
@@ -36,13 +36,13 @@ class Marker extends React.Component {
   }
 
   render() {
-    const { crime: { OffenseDescription } } = this.props;
+    const { crime: { OffenseType } } = this.props;
     return (
       <div
         className="marker"
         // style={{ backgroundColor: color, cursor: 'pointer' }}
-        style={{ backgroundImage: getImage(OffenseDescription), cursor: 'pointer' }}
-        title={`Offense Type: ${OffenseDescription}`}
+        style={{ backgroundImage: getImage(OffenseType), cursor: 'pointer' }}
+        title={`Offense Type: ${OffenseType}`}
         role="button"
         onClick={this.onClick}
       />
