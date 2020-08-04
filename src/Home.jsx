@@ -26,6 +26,7 @@ class Home extends React.Component {
       query = `query filtrateCrimes($input: FilterInput!) {
         filtrateCrimes(input: $input) {
           _id OffenseType OffenseDescription ReportDate OffenseStartDate OffenseEndDate Block CensusTract Longitude Latitude
+          Beat District
         }
       }`;
       const data = await graphQLFetch(query, inputVars, showError);

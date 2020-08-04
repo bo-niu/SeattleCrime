@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 function getImage(type) {
   // console.log(`type: ${type}`);
@@ -32,6 +35,8 @@ function getCrimeDetail(crime) {
   Offense Start Date: ${crime.OffenseStartDate}\n
   Offense End Date: ${crime.OffenseEndDate}\n
   Block: ${crime.Block}\n
+  District: ${crime.District}\n
+  Beat: ${crime.Beat}\n
   2000 Census Tract: ${crime.CensusTract}\n
   Longitude: ${crime.Longitude}\n
   Latitude: ${crime.Latitude}
@@ -45,7 +50,10 @@ class Marker extends React.Component {
   }
 
   onClick(e) {
-    console.log('marker clicked');
+    e.preventDefault();
+    const { history, crime } = this.props;
+    // eslint-disable-next-line no-underscore-dangle
+    history.push({ pathname: `discussion/${crime._id}` });
   }
 
   render() {
@@ -63,4 +71,4 @@ class Marker extends React.Component {
   }
 }
 
-export default Marker;
+export default withRouter(Marker);
