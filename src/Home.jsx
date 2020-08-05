@@ -5,7 +5,7 @@ import { Row, Col } from 'react-bootstrap';
 import GoogleMap from './GoogleMap.jsx';
 import HomeFilter from './HomeFilter.jsx';
 import graphQLFetch from './graphQLFetch.js';
-import getVarsFromHomeURL from './util.js';
+import * as util from './util.js';
 import store from './store.js';
 import withToast from './withToast.jsx';
 
@@ -13,7 +13,7 @@ const crimeLimit = 200;
 
 class Home extends React.Component {
   static async fetchData(match, search, showError) {
-    const vars = getVarsFromHomeURL(search);
+    const vars = util.getVarsFromHomeURL(search);
     const inputVars = { input: vars };
     let query = `query crimeCount($input: FilterInput!) {
       crimeCount(input: $input) 
@@ -66,7 +66,9 @@ class Home extends React.Component {
   }
 
   async loadData() {
-    const { location: { search }, match, showError } = this.props;
+    const {
+      location: { search }, match, showError, showSuccess,
+    } = this.props;
     this.setState({ filterDisabled: true });
     const data = await Home.fetchData(match, search, showError);
     if (data) {
@@ -74,6 +76,8 @@ class Home extends React.Component {
     }
     if (data.count > crimeLimit) {
       showError(`We found ${data.count} crimes in the range, which exceeds the limit of cases showing on the map (${crimeLimit}). Please reduce your searching range.`);
+    } else {
+      showSuccess(`Search succeeds. We found ${data.count} crimes in the range.`);
     }
     this.setState({ filterDisabled: false });
   }

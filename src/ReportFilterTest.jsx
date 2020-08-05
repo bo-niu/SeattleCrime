@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 import DateAndTimePickers from './DateAndTimePickers.jsx';
-import { getVarsFromHomeURL } from './util.js';
+import { getVarsFromReportURL } from './util.js';
 // import { func } from 'prop-types';
 
 function getBeatOption(district) {
@@ -30,11 +30,11 @@ function getTypeOptions() {
   return newList;
 }
 
-class HomeFilter extends React.Component {
+class ReportFilter extends React.Component {
   constructor(props) {
     super(props);
     const { location: { search } } = props;
-    const vars = getVarsFromHomeURL(search);
+    const vars = getVarsFromReportURL(search);
     this.state = {
       startDate: vars.startDate,
       endDate: vars.endDate,
@@ -118,7 +118,7 @@ class HomeFilter extends React.Component {
 
   setForm() {
     const { location: { search } } = this.props;
-    const vars = getVarsFromHomeURL(search);
+    const vars = getVarsFromReportURL(search);
     this.setStartDate(vars.startDate);
     this.setEndDate(vars.endDate);
     this.setDistrict(vars.district);
@@ -177,11 +177,6 @@ class HomeFilter extends React.Component {
                   value={district}
                   onChange={this.onDistrictChange}
                 >
-                  {/* <option value="All">All</option>
-                  <option value="E">E</option>
-                  <option value="G">G</option>
-                  <option value="Q">Q</option>
-                  <option value="B">B</option> */}
                   {districtOptions}
                 </FormControl>
               </Col>
@@ -196,11 +191,6 @@ class HomeFilter extends React.Component {
                   onChange={this.onBeatChange}
                   disabled={beatDisabled}
                 >
-                  {/* <option value="All">All</option>
-                  <option value="E2">E2</option>
-                  <option value="G2">G2</option>
-                  <option value="Q2">Q2</option>
-                  <option value="B2">B2</option> */}
                   {beatOptions}
                 </FormControl>
               </Col>
@@ -217,19 +207,13 @@ class HomeFilter extends React.Component {
           </Form>
         </Panel.Body>
         <Panel.Footer>
-          <h2>How to use our website</h2>
+          <h2>Note:</h2>
           <br />
-          <div>1. Apply the filter</div>
-          <br />
-          <div>2. Move the cursor to your interested crime record on the map, you will see the detailed information.</div>
-          <br />
-          <div>3. Click the crime icon and you will be redirected to the discussion page of that crime record.</div>
-          <br />
-          <div>4. Please note that our data is collected from online open data source.</div>
+          <div>Our data is collected from online open data. Therefore, the result only represents our own database.</div>
         </Panel.Footer>
       </Panel>
     );
   }
 }
 
-export default withRouter(HomeFilter);
+export default withRouter(ReportFilter);
