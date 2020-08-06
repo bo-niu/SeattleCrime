@@ -6,24 +6,25 @@ import { withRouter } from 'react-router-dom';
 function getImage(type) {
   // console.log(`type: ${type}`);
   switch (type) {
-    case 'TRESPASS':
-    case 'BIKE THEFT':
+    case 'ASSAULT':
+    case 'BURGLARY':
+    case 'FRAUD':
     case 'ROBBERY':
+    case 'SHOPLIFTING':
+    case 'TRESPASS':
+      return `url("/markers/${type} ADDSPACE.png")`;
+    case 'BIKE THEFT':
     case 'NARCOTICS':
     case 'DISTURBANCE':
-    case 'SHOPLIFTING':
     case 'THREATS':
     case 'STOLEN PROPERTY':
     case 'WARRANT ARREST':
-    case 'FRAUD':
-    case 'ASSAULT':
     case 'VEHICLE THEFT':
     case 'PROPERTY DAMAGE':
-    case 'BURGLARY':
     case 'CAR PROWL':
       return `url("/markers/${type}.png")`;
     default:
-      return 'url("/markers/OTHER.png")';
+      return 'url("/markers/OTHER ADDSPACE.png")';
   }
 }
 
