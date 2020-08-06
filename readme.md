@@ -28,7 +28,7 @@ Backend GraphQL Playground: [https://seattle-crime-api.herokuapp.com/graphql](ht
 1. Most functionalities in Home page has been implemented.
 2. Most functionalities in Report page has been implemented. The filter form may have small changes later.
 3. The discussion page has not been implemented yet. We place some static component there as placeholder.
-4. The user login part is not fully functioning.
+4. The user authorization in discussion posts is not fully functioning.
 5. In the backend, most graphQL interface has been implemented.
 
 ## Contribution
