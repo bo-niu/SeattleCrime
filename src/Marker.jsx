@@ -21,9 +21,9 @@ function getImage(type) {
     case 'PROPERTY DAMAGE':
     case 'BURGLARY':
     case 'CAR PROWL':
-      return `url("markers/${type}.png")`;
+      return `url("/markers/${type}.png")`;
     default:
-      return 'url("markers/OTHER.png")';
+      return 'url("/markers/OTHER.png")';
   }
 }
 

@@ -31,6 +31,7 @@ if (enableHMR && (process.env.NODE_ENV !== 'production')) {
 }
 
 app.use(express.static('public'));
+app.use('/markers', express.static('public/markers'));
 
 const apiProxyTarget = process.env.API_PROXY_TARGET;
 if (apiProxyTarget) {
