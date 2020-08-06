@@ -37,7 +37,7 @@ Bo: Refactored codes in Home page to support server side rendering. Added type f
 
 Chris: 
 
-Yifei: 
+Yifei: Implemented GraphQL schemas and resolvers to store user information, allow users to post comments and retrive comments by crime Id.
 
 Surendra: 
 
