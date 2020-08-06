@@ -1,4 +1,5 @@
 # Group Robot
+
 Team Members:
 
 Yifei Wang
@@ -35,11 +36,11 @@ Backend GraphQL Playground: [https://seattle-crime-api.herokuapp.com/graphql](ht
 
 Bo: Refactored codes in Home page to support server side rendering. Added type filter to the Home filter. Implemented the functionality to change marker's image for different type of crime. Wrote some graphQL interface and UI for Report page.
 
-Chris: Update report page with filter and help with implementation of graph, and update schema for graphQL. 
+Chris: Update report page with filter and help with implementation of graph, and update schema for graphQL.
 
 Yifei: Implemented GraphQL schemas and resolvers to store user information, allow users to post comments and retrieve comments by crime Id.
 
-Surendra:
+Surendra: Worked on Discussion page functionality, trying to add comments to commentsList to show on the page.
 
 ## Screenshot
 
@@ -59,7 +60,6 @@ Chris: Update GraphQL schema, worked on API for ReportFilter and the UI for the 
 Yifei: Made Google map component functional and worked on mongodb about users and comments.
 
 Surendra: Worked on Discussion page to add comments on button click, working on connecting state to DB.
-
 
 ## Deployment
 
@@ -86,6 +86,7 @@ Since in Iteration 1, we are not required to deploy our project to Heroku, so we
 3. Currently the filter on the Report page doesn't work correctly.
 
 ## Iteration 1 Screenshot:
+
 ![iter1-1](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-1.png)
 ![iter1-2](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-2.png)
 ![iter1-3](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter1-3.png)
