@@ -139,7 +139,7 @@ class HomeFilter extends React.Component {
     return (
       <Panel>
         <Panel.Heading>
-          <Panel.Title>This is for filter</Panel.Title>
+          {/* <Panel.Title>This is for filter</Panel.Title> */}
         </Panel.Heading>
         <Panel.Body>
           <Form horizontal onSubmit={this.onApplyFilter}>
@@ -219,13 +219,13 @@ class HomeFilter extends React.Component {
         <Panel.Footer>
           <h2>How to use our website</h2>
           <br />
-          <div>1. Apply the filter</div>
+          <div>1. Apply the filter.</div>
           <br />
           <div>2. Move the cursor to your interested crime record on the map, you will see the detailed information.</div>
           <br />
           <div>3. Click the crime icon and you will be redirected to the discussion page of that crime record.</div>
           <br />
-          <div>4. Please note that our data is collected from online open data source.</div>
+          <div>4. Please note that our data is collected from online open data source. Most of our data is in the range of 2008 - 2016.</div>
         </Panel.Footer>
       </Panel>
     );

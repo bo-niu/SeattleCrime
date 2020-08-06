@@ -15,6 +15,37 @@ Christopher Tso
 
 Seattle Crime Data visualization.
 
+# Iteration 2
+
+In iteration 2, we deployed our website to Heroku.
+
+Deployed Heroku Link: [https://seattle-crime-ui.herokuapp.com](https://seattle-crime-ui.herokuapp.com)
+
+Backend GraphQL Playground: [https://seattle-crime-api.herokuapp.com/graphql](https://seattle-crime-api.herokuapp.com/graphql)
+
+## Progress
+
+1. Most functionalities in Home page has been implemented.
+2. Most functionalities in Report page has been implemented. The filter form may have small changes later.
+3. The discussion page has not been implemented yet. We place some static component there as placeholder.
+4. The user login part is not fully functioning.
+5. In the backend, most graphQL interface has been implemented.
+
+## Contribution
+
+Bo: Refactored codes in Home page to support server side rendering. Added type filter to the Home filter. Implemented the functionality to change marker's image for different type of crime. Wrote some graphQL interface and UI for Report page. 
+
+Chris: 
+
+Yifei: 
+
+Surendra: 
+
+## Screenshot
+
+![iter2-1](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter2-1.png)
+![iter2-2](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter2-2.png)
+
 # Iteration 1
 
 For iteration 1, we started our project using the boilerplate code from the Pro-MERN Book. This includes both the API and UI folders. So far, we have implemented a Home page with a Google Map and a filter to filter the types of crimes that are displayed. We have also started a "Reports" page though it is not fully functional yet. We also have a "Discussion" page where users could post their comments based on their experience but it is not fully functional yet.
