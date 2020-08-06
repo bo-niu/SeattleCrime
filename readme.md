@@ -33,13 +33,13 @@ Backend GraphQL Playground: [https://seattle-crime-api.herokuapp.com/graphql](ht
 
 ## Contribution
 
-Bo: Refactored codes in Home page to support server side rendering. Added type filter to the Home filter. Implemented the functionality to change marker's image for different type of crime. Wrote some graphQL interface and UI for Report page. 
+Bo: Refactored codes in Home page to support server side rendering. Added type filter to the Home filter. Implemented the functionality to change marker's image for different type of crime. Wrote some graphQL interface and UI for Report page.
 
-Chris: 
+Chris: Update report page with filter and help with implementation of graph, and update schema for graphQL. 
 
-Yifei: Implemented GraphQL schemas and resolvers to store user information, allow users to post comments and retrive comments by crime Id.
+Yifei: Implemented GraphQL schemas and resolvers to store user information, allow users to post comments and retrieve comments by crime Id.
 
-Surendra: 
+Surendra:
 
 ## Screenshot
 
