@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import graphQLFetch from './graphQLFetch.js';
@@ -23,7 +24,7 @@ class Discussion extends React.Component {
     const result = await graphQLFetch(query, { crimeID: id }, showError);
     const query2 = `query getCommentByCrimeID($input: String!) {
       getCommentByCrimeID(input: $input) {
-        email crimeid content created
+        email crimeid content created givenName
       }
     }`;
     const result2 = await graphQLFetch(query2, { input: id }, showError);
@@ -36,6 +37,8 @@ class Discussion extends React.Component {
     const { comments, crime, defaultVal } = initialDate;
     this.state = { comments, crime, defaultVal };
     delete store.initialData;
+    this.graphQLAddComment = this.graphQLAddComment.bind(this);
+    this.addComment = this.addComment.bind(this);
   }
 
   componentDidMount() {
@@ -65,21 +68,35 @@ class Discussion extends React.Component {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  graphQLAddComment(comment, user) {
-    const mutation = `mutation {}`;
-    return comment;
+  async graphQLAddComment(comment, user) {
+    const { showError } = this.props;
+    const { crime: { _id } } = this.state;
+    const mutation = `mutation postComment($input: CommentInput) {
+      postComment(input: $input) {
+        content
+      }
+    }`;
+    const result = await graphQLFetch(mutation, { input: { crimeid: _id, content: comment, ...user } }, showError);
+    if (result) {
+      return result.postComment;
+    }
+    return null;
   }
 
+  /**
+   * @param {comment} string
+   */
   async addComment(comment) {
+    const { showError, showSuccess } = this.props;
     const user = {
       email: 'bo@gmail.com',
       givenName: 'Bo',
     };
-    const result = await this.graphQLAddComment(comment, user);
-    if (result === comment) {
-      console.log('add comment succeeds');
+    const { content } = await this.graphQLAddComment(comment, user);
+    if (content === comment) {
+      showSuccess('add comment succeeds');
     } else {
-      console.log('add comment failed.');
+      showError('add comment failed.');
     }
     this.loadData();
   }
@@ -97,10 +114,10 @@ class Discussion extends React.Component {
       <div>
         <Row>
           <Col lg={3}>
-            <h4>Detailed Information:</h4>
+            <h4><b>Detailed Information:</b></h4>
             <CrimeDashboard crime={crime} />
             <div className="col-4  pt-3 border-right">
-              <h4>Post your comment here</h4>
+              <h4><b>Post your comment here</b></h4>
               <CommentForm addComment={this.addComment} />
             </div>
           </Col>

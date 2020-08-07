@@ -34,9 +34,8 @@ export default class CommentForm extends Component {
     this.setState({ error: '', loading: true });
     const { addComment } = this.props;
     // persist the comments on server
-    const { comment } = this.state;
-    addComment(comment);
-    
+    const { comment: { message } } = this.state;
+    addComment(message);
   }
 
   /**
@@ -58,7 +57,8 @@ export default class CommentForm extends Component {
    * Simple validation
    */
   isFormValid() {
-    return this.state.comment.name !== '' && this.state.comment.message !== '';
+    // return this.state.comment.name !== '' && this.state.comment.message !== '';
+    return this.state.comment.message !== '';
   }
 
   renderError() {
@@ -72,14 +72,14 @@ export default class CommentForm extends Component {
       <React.Fragment>
         <form method="post" onSubmit={this.onSubmit}>
           <div className="form-group">
-            <input
+            {/* <input
               onChange={this.handleFieldChange}
               value={this.state.comment.name}
               className="form-control"
               placeholder="😎 Your Name"
               name="name"
               type="text"
-            />
+            /> */}
           </div>
 
           <div className="form-group">

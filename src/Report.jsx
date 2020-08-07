@@ -17,8 +17,8 @@ class Report extends React.Component {
       }
     }`;
     const result = await graphQLFetch(query, inputVars, showError);
-    console.log('get countvsyear: ');
-    console.log(result);
+    // console.log('get countvsyear: ');
+    // console.log(result);
     return result;
   }
 

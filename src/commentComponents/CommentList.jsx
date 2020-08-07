@@ -4,6 +4,8 @@ import Comment from './Comment.jsx';
 
 export default function CommentList(props) {
   const { comments, loading } = props;
+  // console.log('comments: ');
+  // console.log(comments);
   return (
     <div className="commentList">
       <h5 className="text-muted mb-4">

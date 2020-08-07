@@ -40,8 +40,8 @@ export default class ReChart extends PureComponent {
   render() {
     const { data } = this.props;
     const dataForChart = translate(data);
-    console.log('dataForChart: ');
-    console.log(dataForChart);
+    // console.log('dataForChart: ');
+    // console.log(dataForChart);
     return (
       <ResponsiveContainer width="95%" height={400}>
         <LineChart
