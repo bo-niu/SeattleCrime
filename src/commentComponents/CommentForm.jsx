@@ -31,7 +31,7 @@ export default class CommentForm extends Component {
     }
 
     // loading status and clear error
-    this.setState({ error: '', loading: true });
+    this.setState({ error: '' });
     const { addComment } = this.props;
     // persist the comments on server
     const { comment: { message } } = this.state;
