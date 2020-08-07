@@ -34,4 +34,15 @@ function getVarsFromReportURL(search) {
   return vars;
 }
 
-export { getVarsFromHomeURL, getVarsFromReportURL };
+function getVarsFromDiscussionURL(match) {
+  const { params: { id } } = match;
+  let result = id;
+  let defaultVal = false;
+  if (id === null || id === undefined) {
+    result = '5f2a9e5f0c115a7bf2d452dd';
+    defaultVal = true;
+  }
+  return { id: result, defaultVal };
+}
+
+export { getVarsFromHomeURL, getVarsFromReportURL, getVarsFromDiscussionURL };

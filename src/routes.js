@@ -5,7 +5,7 @@ import About from './About.jsx';
 // import NotFound from './NotFound.jsx';
 
 const routes = [
-  { path: '/discussion', component: Discussion },
+  { path: '/discussion/:id?', component: Discussion },
   { path: '/home/:id?', component: Home },
   { path: '/report', component: Report },
   { path: '/about', component: About },
