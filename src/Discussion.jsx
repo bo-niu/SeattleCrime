@@ -4,13 +4,14 @@ import { Row, Col } from 'react-bootstrap';
 import graphQLFetch from './graphQLFetch.js';
 import withToast from './withToast.jsx';
 import store from './store.js';
-import UserContext from './UserContext.js';
+// import UserContext from './UserContext.js';
 import { getVarsFromDiscussionURL } from './util.js';
 import CrimeDashboard from './CrimeDashboard.jsx';
 import CommentList from './commentComponents/CommentList.jsx';
 import CommentForm from './commentComponents/CommentForm.jsx';
 
 class Discussion extends React.Component {
+// <<<<<<< HEAD
   static async fetchData(match, search, showError) {
     const query = `query getCrimeByID($crimeID: String!) {
       getCrimeByID(crimeID: $crimeID) {
@@ -99,6 +100,30 @@ class Discussion extends React.Component {
       showError('add comment failed.');
     }
     this.loadData();
+    // =======
+    //   constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //       value: " ",
+    //     };
+
+    //     this.handleChange = this.handleChange.bind(this);
+    //     this.handleSubmit = this.handleSubmit.bind(this);
+    //   }
+
+    //   handleChange(event) {
+    //     this.setState({ comments: event.target.value });
+    //   }
+
+    //   handleSubmit(event) {
+    //     alert("A comment was submitted " + this.state.value);
+    //     event.preventDefault();
+
+    //     if (!this.isFormValid()) {
+    //       this.setState({ error: "All fields are required." });
+    //       return;
+    //     }
+    // >>>>>>> b1eaae8549db34a555c6e2c61b1017d7fa354c22
   }
 
   render() {
@@ -111,6 +136,7 @@ class Discussion extends React.Component {
       </h4>
     ) : null;
     return (
+    // <<<<<<< HEAD
       <div>
         <Row>
           <Col lg={3}>
@@ -131,8 +157,31 @@ class Discussion extends React.Component {
           </Col>
         </Row>
       </div>
+    // =======
+    //       <form onSubmit={this.handleSubmit}>
+    //         <div className="form-group">
+    //           <label discuss="commentbox">Comment</label>
+    //           <textarea
+    //             className="form-control"
+    //             id="commentbox"
+    //             rows="5"
+    //             value={this.state.value}
+    //             onChange={this.handleChange}
+    //           />
+    //           <button style={{ margin: 10 }}>Add Comment</button>
+    //         </div>
+    //       </form>
+    // >>>>>>> b1eaae8549db34a555c6e2c61b1017d7fa354c22
     );
   }
 }
 
+// <<<<<<< HEAD
 export default withToast(Discussion);
+// =======
+// function isFormValid() {
+//   return this.state.value.message !== "";
+// }
+
+// export default Discussion;
+// >>>>>>> b1eaae8549db34a555c6e2c61b1017d7fa354c22
