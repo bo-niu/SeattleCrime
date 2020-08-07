@@ -4,7 +4,7 @@ class Discussion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: "Add your comments",
+      value: " ",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +18,11 @@ class Discussion extends React.Component {
   handleSubmit(event) {
     alert("A comment was submitted " + this.state.value);
     event.preventDefault();
+
+    if (!this.isFormValid()) {
+      this.setState({ error: "All fields are required." });
+      return;
+    }
   }
 
   render() {
@@ -37,6 +42,10 @@ class Discussion extends React.Component {
       </form>
     );
   }
+}
+
+function isFormValid() {
+  return this.state.value.message !== "";
 }
 
 export default Discussion;
