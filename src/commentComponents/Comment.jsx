@@ -13,9 +13,9 @@ export default function Comment(props) {
         alt={name}
       /> */}
 
-      <div className="media-body p-2 shadow-sm rounded bg-light border">
-        <small className="float-right text-muted">{created.toISOString()}</small>
-        <h6 className="mt-0 mb-1 text-muted">{`${givenName}  ${email}`}</h6>
+      <div className="comment-box">
+        <small className="comment-date">{created.toLocaleString('en-US')}</small>
+        <h6>{`${givenName}  ${email}`}</h6>
         {content}
       </div>
     </div>

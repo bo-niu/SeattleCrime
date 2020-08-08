@@ -33,6 +33,9 @@ if (enableHMR && (process.env.NODE_ENV !== 'production')) {
 app.use(express.static('public'));
 app.get('/markers', express.static('public/markers'));
 
+app.use(express.static('public'));
+app.get('/comment', express.static('public/comment'));
+
 const apiProxyTarget = process.env.API_PROXY_TARGET;
 if (apiProxyTarget) {
   app.use('/graphql', proxy({ target: apiProxyTarget, changeOrigin: true }));
