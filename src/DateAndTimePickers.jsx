@@ -38,20 +38,20 @@ class DateAndTimePickers extends React.Component {
     const formattedDate = moment(value).format('YYYY-MM-DD[T]HH:mm:ss');
     return (
       // <form className={classes.container} noValidate>
-      <form noValidate>
+      // <form noValidate>
         <TextField
           onChange={this.onChange}
           id="datetime-local"
           // label="Time Range"
           type="datetime-local"
-          defaultValue="2017-05-24T10:30"
+          // defaultValue="2017-05-24T10:30"
           value={formattedDate}
           // className={classes.textField}
           InputLabelProps={{
             shrink: true,
           }}
         />
-      </form>
+      // </form>
     );
   }
 }

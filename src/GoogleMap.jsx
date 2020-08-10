@@ -11,8 +11,9 @@ class GoogleMap extends React.Component {
     // console.log('crimes in google map:');
     // console.log(crimes);
     const multipleMarkers = (
-      crimes.map(crime => (
+      crimes.map((crime, i)=> (
         <Marker
+          key = {i}
           lat={crime.Latitude}
           lng={crime.Longitude}
           // name={getCrimeDetail(crime)}

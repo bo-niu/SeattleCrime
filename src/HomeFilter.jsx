@@ -12,21 +12,21 @@ import { getVarsFromHomeURL } from './util.js';
 function getBeatOption(district) {
   const beatList = [`${district}1`, `${district}2`, `${district}3`];
   const newList = beatList.map((beat, i) => <option value={beat} key={i.toString()}>{beat}</option>);
-  newList.unshift(<option value="All">All</option>);
+  newList.unshift(<option key="All" value="All">All</option>);
   return newList;
 }
 
 function getDistrictOptions() {
   const districtList = ['B', 'C', 'D', 'E', 'F', 'G', 'J', 'K', 'L', 'M', 'N', 'O', 'Q', 'R', 'S', 'U', 'W'];
   const newList = districtList.map((dist, i) => <option value={dist} key={i.toString()}>{dist}</option>);
-  newList.unshift(<option value="All">All</option>);
+  newList.unshift(<option key="All" value="All">All</option>);
   return newList;
 }
 
 function getTypeOptions() {
   const typeList = ['TRESPASS', 'BIKE THEFT', 'ROBBERY', 'NARCOTICS', 'DISTURBANCE', 'SHOPLIFTING', 'THREATS', 'STOLEN PROPERTY', 'WARRANT ARREST', 'FRAUD', 'ASSAULT', 'VEHICLE THEFT', 'PROPERTY DAMAGE', 'BURGLARY', 'CAR PROWL'];
   const newList = typeList.map((type, i) => <option value={type} key={i.toString()}>{type}</option>);
-  newList.unshift(<option value="All">All</option>);
+  newList.unshift(<option key="All" value="All">All</option>);
   return newList;
 }
 
