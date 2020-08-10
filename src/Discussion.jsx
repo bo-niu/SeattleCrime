@@ -1,14 +1,14 @@
 /* eslint-disable max-len */
-import React from "react";
-import { Row, Col } from "react-bootstrap";
-import graphQLFetch from "./graphQLFetch.js";
-import withToast from "./withToast.jsx";
-import store from "./store.js";
-// import UserContext from './UserContext.js';
-import { getVarsFromDiscussionURL } from "./util.js";
-import CrimeDashboard from "./CrimeDashboard.jsx";
-import CommentList from "./commentComponents/CommentList.jsx";
-import CommentForm from "./commentComponents/CommentForm.jsx";
+import React from 'react';
+import { Row, Col } from 'react-bootstrap';
+import graphQLFetch from './graphQLFetch.js';
+import withToast from './withToast.jsx';
+import store from './store.js';
+import UserContext from './UserContext.js';
+import { getVarsFromDiscussionURL } from './util.js';
+import CrimeDashboard from './CrimeDashboard.jsx';
+import CommentList from './commentComponents/CommentList.jsx';
+import CommentForm from './commentComponents/CommentForm.jsx';
 
 class Discussion extends React.Component {
   static async fetchData(match, search, showError) {
@@ -74,7 +74,7 @@ class Discussion extends React.Component {
         comments: data.comments,
         defaultVal: data.defaultVal,
       });
-      showSuccess("load crime and comments successfully.");
+      showSuccess('load crime and comments successfully.');
     }
   }
 
@@ -92,7 +92,7 @@ class Discussion extends React.Component {
     const result = await graphQLFetch(
       mutation,
       { input: { crimeid: _id, content: comment, ...user } },
-      showError
+      showError,
     );
     if (result) {
       return result.postComment;
@@ -105,15 +105,16 @@ class Discussion extends React.Component {
    */
   async addComment(comment) {
     const { showError, showSuccess } = this.props;
-    const user = {
-      email: "bo@gmail.com",
-      givenName: "Bo",
-    };
-    const { content } = await this.graphQLAddComment(comment, user);
+    // const user = {
+    //   email: 'bo@gmail.com',
+    //   givenName: 'Bo',
+    // };
+    const { givenName, email } = this.context;
+    const { content } = await this.graphQLAddComment(comment, { givenName, email });
     if (content === comment) {
-      showSuccess("add comment succeeds");
+      showSuccess('add comment succeeds');
     } else {
-      showError("add comment failed.");
+      showError('add comment failed.');
     }
     this.loadData();
   }
@@ -123,7 +124,7 @@ class Discussion extends React.Component {
     const defaultValReminder = defaultVal ? (
       <h4>
         {
-          "Note: These are the comments for the default crime. If you want to see comments of your interested crime, please go to "
+          'Note: These are the comments for the default crime. If you want to see comments of your interested crime, please go to '
         }
         <b>Home </b>
         page and click the icon on the Google Map
@@ -155,4 +156,6 @@ class Discussion extends React.Component {
     );
   }
 }
+
+Discussion.contextType = UserContext;
 export default withToast(Discussion);

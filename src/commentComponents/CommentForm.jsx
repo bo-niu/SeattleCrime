@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import UserContext from '../UserContext.js';
 
-export default class CommentForm extends Component {
+class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,6 +69,9 @@ export default class CommentForm extends Component {
   }
 
   render() {
+    const { signedIn } = this.context;
+    const emoji = String.fromCodePoint(0x1F449);
+    const buttonString = signedIn ? `Comment ${emoji}` : 'Please Sign In';
     return (
       <React.Fragment>
         <form method="post" onSubmit={this.onSubmit}>
@@ -96,8 +100,8 @@ export default class CommentForm extends Component {
           {this.renderError()}
 
           <div className="form-group">
-            <button disabled={this.state.loading} className="btn btn-primary">
-              Comment &#10148;
+            <button disabled={this.state.loading || !signedIn} className="btn btn-primary">
+              {buttonString}
             </button>
           </div>
         </form>
@@ -105,3 +109,7 @@ export default class CommentForm extends Component {
     );
   }
 }
+
+CommentForm.contextType = UserContext;
+
+export default CommentForm;
