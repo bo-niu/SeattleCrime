@@ -158,4 +158,8 @@ class Discussion extends React.Component {
 }
 
 Discussion.contextType = UserContext;
-export default withToast(Discussion);
+
+const DiscussionWithToast = withToast(Discussion);
+DiscussionWithToast.fetchData = Discussion.fetchData;
+
+export default DiscussionWithToast;

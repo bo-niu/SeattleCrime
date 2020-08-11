@@ -98,4 +98,7 @@ class Home extends React.Component {
   }
 }
 
-export default withToast(Home);
+const HomeWithToast = withToast(Home);
+HomeWithToast.fetchData = Home.fetchData;
+
+export default HomeWithToast;
