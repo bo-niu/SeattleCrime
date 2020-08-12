@@ -18,6 +18,7 @@ Seattle Crime Data visualization.
 
 # Iteration 3
 
+<<<<<<< HEAD
 In iteration 3, we implemented all the functionalities for our application and the application is fully functional.
 
 Seattle Crime Data visulization deployed on Heroku: https://seattle-crime-ui.herokuapp.com/home
@@ -55,6 +56,24 @@ Surendra: Worked on implementing discussion page for the application, user can s
 - SignIn Page
 
 ![Discussion](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/SignIn.png)
+=======
+We have finished our project.
+
+## Contribution
+
+Bo: Working on the Discussion page. Implemented the basic ui and api of add comments for a specific crime when user is logged in. Fixed bug in SSR.
+
+Chris: 
+
+Yifei: 
+
+Surendra: 
+
+## Screenshot
+
+![iter3-1](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter3-1.png)
+![iter3-2](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter3-2.png)
+>>>>>>> e1e70349a363e2b63b4c5812ca94d02d62ef3fa7
 
 # Iteration 2
 

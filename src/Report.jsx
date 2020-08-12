@@ -75,4 +75,7 @@ class Report extends React.Component {
   }
 }
 
-export default withToast(Report);
+const ReportWithToast = withToast(Report);
+ReportWithToast.fetchData = Report.fetchData;
+
+export default ReportWithToast;
