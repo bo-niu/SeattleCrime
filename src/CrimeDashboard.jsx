@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const CrimeDashboard = (props) => {
   const { crime } = props;
-  if(crime === null || crime === undefined) {
+  if (crime === null || crime === undefined) {
     return null;
   }
   return (

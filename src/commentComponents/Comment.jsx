@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export default function Comment(props) {
-  const { comment: { givenName, email, content, created } } = props;
+  const {
+    comment: { givenName, email, content, created },
+  } = props;
 
   return (
     <div className="media mb-3">
@@ -14,7 +16,9 @@ export default function Comment(props) {
       /> */}
 
       <div className="comment-box">
-        <small className="comment-date">{created.toLocaleString('en-US')}</small>
+        <small className="comment-date">
+          {created.toLocaleString("en-US")}
+        </small>
         <h6>{`${givenName}  ${email}`}</h6>
         {content}
       </div>

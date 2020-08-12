@@ -16,6 +16,46 @@ Christopher Tso
 
 Seattle Crime Data visualization.
 
+# Iteration 3
+
+In iteration 3, we implemented all the functionalities for our application and the application is fully functional.
+
+Seattle Crime Data visulization deployed on Heroku: https://seattle-crime-ui.herokuapp.com/home
+
+Github Repositories:
+
+API - https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_API
+
+UI - https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI
+
+## Contribution
+
+Bo:
+
+Chris:
+
+Yifei:
+
+Surendra: Worked on implementing discussion page for the application, user can select at each individual crime icon and discuss about it. Fixing eslint error, testing and debugging application.
+
+## Screenshots:
+
+- Landing Page
+
+![Homepage](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Homepage.png)
+
+- Report Page
+
+![Report](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Report.png)
+
+- Discussion Page
+
+![Discussion](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Discussion.png)
+
+- SignIn Page
+
+![Discussion](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/SignIn.png)
+
 # Iteration 2
 
 In iteration 2, we deployed our website to Heroku.
