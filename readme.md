@@ -16,6 +16,25 @@ Christopher Tso
 
 Seattle Crime Data visualization.
 
+# Iteration 3
+
+We have finished our project.
+
+## Contribution
+
+Bo: Working on the Discussion page. Implemented the basic ui and api of add comments for a specific crime when user is logged in. Fixed bug in SSR.
+
+Chris: 
+
+Yifei: 
+
+Surendra: 
+
+## Screenshot
+
+![iter3-1](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter3-1.png)
+![iter3-2](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/iter3-2.png)
+
 # Iteration 2
 
 In iteration 2, we deployed our website to Heroku.
