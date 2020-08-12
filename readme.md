@@ -34,7 +34,7 @@ Bo: Working on the Discussion page. Implemented the basic ui and api of add comm
 
 Chris:
 
-Yifei:
+Yifei: Added styles to comments, formatted string output and sorted comments to make it readable. Resolved long-lasting react warnings in developer console.  
 
 Surendra: Worked on implementing discussion page for the application, user can select at each individual crime icon and discuss about it. Fixing eslint error, testing and debugging application.
 
