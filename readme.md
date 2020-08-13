@@ -34,9 +34,23 @@ Bo: Working on the Discussion page. Implemented the basic ui and api of add comm
 
 Chris: Updated comment box to only work when signed in. General testing and debugging.
 
-Yifei: Added styles to comments, formatted string output and sorted comments to make it readable. Resolved long-lasting react warnings in developer console.  
+Yifei: Added styles to comments, formatted string output and sorted comments to make it readable. Resolved long-lasting react warnings in developer console.
 
 Surendra: Worked on implementing discussion page for the application, user can select at each individual crime icon and discuss about it. Fixing eslint error, testing and debugging application.
+
+## Progress and Key features:
+
+- Landing page: successfully implemented user sign-in features with aunthentication
+
+- Report page: updated the filter form to output a graph
+
+- Discussion page: successfully implemented all the functionality in discussion page where user can write comment/discuss about their experience of specific crimes. Successfully implemented user authorization to save user name/email in the database.
+
+- About page: added information about the project in about page.
+
+- Fixed all eslint errors and removed redundant codes.
+
+- Fixed all the code based on insturctors last feedback
 
 ## Screenshots:
 
@@ -44,17 +58,25 @@ Surendra: Worked on implementing discussion page for the application, user can s
 
 ![Homepage](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Homepage.png)
 
-- Report Page
+- This is our Landing Page where users can login directly and use the filter in order to get crimes around Seattle. The map will list all the crimes based on the filter and if you hover around the icon, you'll see description of the crime. If you click the icon, it'll redirect you to the discussion page where you can post questions or comment about your experience for that crime.
+
+* Report Page
 
 ![Report](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Report.png)
 
-- Discussion Page
+- Report page will output a graph of the crime based on the filter. It'll show how the crime rate in a graph.
+
+* Discussion Page
 
 ![Discussion](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/Discussion.png)
 
-- SignIn Page
+- Users can discuss and ask question about their experience in this page.
+
+* SignIn Page
 
 ![SignIn](https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI/blob/master/screenshot/SignIn.png)
+
+- Users can directly login using their email id.
 
 # Iteration 2
 
