@@ -1,8 +1,12 @@
-import React from "react";
+/* eslint linebreak-style: ["error", "windows"] */
+
+import React from 'react';
 
 export default function Comment(props) {
   const {
-    comment: { givenName, email, content, created },
+    comment: {
+      givenName, email, content, created,
+    },
   } = props;
 
   return (
@@ -17,7 +21,7 @@ export default function Comment(props) {
 
       <div className="comment-box">
         <small className="comment-date">
-          {created.toLocaleString("en-US")}
+          {created.toLocaleString('en-US')}
         </small>
         <h6>{`${givenName}  ${email}`}</h6>
         {content}

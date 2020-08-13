@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 import store from './store.js';
 import graphQLFetch from './graphQLFetch.js';

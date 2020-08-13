@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint linebreak-style: ["error", "windows"] */
+
+import React from 'react';
 import {
   Navbar,
   Nav,
@@ -7,14 +9,14 @@ import {
   MenuItem,
   Glyphicon,
   Grid,
-} from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-import Contents from "./Contents.jsx";
-import UserContext from "./UserContext.js";
-import graphQLFetch from "./graphQLFetch.js";
-import store from "./store.js";
-import SignInNavItem from "./SignInNavItem.jsx";
+import Contents from './Contents.jsx';
+import UserContext from './UserContext.js';
+import graphQLFetch from './graphQLFetch.js';
+import store from './store.js';
+import SignInNavItem from './SignInNavItem.jsx';
 
 function NavBar({ user, onUserChange }) {
   return (
@@ -54,7 +56,8 @@ function Footer() {
     <small>
       <hr />
       <p className="text-center">
-        Full source code available at this{" "}
+        Full source code available at this
+        {' '}
         <a href="https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI">
           GitHub repository
         </a>

@@ -1,4 +1,6 @@
-import React from "react";
+/* eslint linebreak-style: ["error", "windows"] */
+
+import React from 'react';
 
 const CrimeDashboard = (props) => {
   const { crime } = props;

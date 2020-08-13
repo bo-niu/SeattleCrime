@@ -1,7 +1,8 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from "react";
-import GoogleMapReact from "google-map-react";
-import Marker from "./Marker.jsx";
+/* eslint linebreak-style: ["error", "windows"] */
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
+import Marker from './Marker.jsx';
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -16,17 +17,17 @@ class GoogleMap extends React.Component {
         lat={crime.Latitude}
         lng={crime.Longitude}
         // name={getCrimeDetail(crime)}
-        // color="blue"
+        // color='blue'
         crime={crime}
       />
     ));
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: "80vh", width: "100%" }}>
+      <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: "AIzaSyD0rYzImyIdiTBNNNLF_8bN1mruuoKhaMY",
-            language: "en",
+            key: 'AIzaSyD0rYzImyIdiTBNNNLF_8bN1mruuoKhaMY',
+            language: 'en',
           }}
           defaultCenter={{
             lat: 47.62,

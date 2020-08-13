@@ -1,4 +1,6 @@
 /* eslint-disable react/no-array-index-key */
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 import Comment from './Comment.jsx';
 

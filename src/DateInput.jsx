@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 
 function displayFormat(date) {
