@@ -32,7 +32,7 @@ UI - https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI
 
 Bo: Working on the Discussion page. Implemented the basic ui and api of add comments for a specific crime when user is logged in. Fixed bug in SSR.
 
-Chris: Updated comment box to only work when signed in. General testing and debugging.
+Chris: Updated comment box to only work when signed in. General testing and debugging. Resolve eslint errors in UI directory. 
 
 Yifei: Added styles to comments, formatted string output and sorted comments to make it readable. Resolved long-lasting react warnings in developer console.
 
