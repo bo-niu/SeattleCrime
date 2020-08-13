@@ -1,6 +1,4 @@
 /* eslint-disable max-len */
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 import {
   Col, Panel, Form, FormGroup, FormControl, ControlLabel,

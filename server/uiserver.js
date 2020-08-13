@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import dotenv from 'dotenv';
 import express from 'express';
 import proxy from 'http-proxy-middleware';

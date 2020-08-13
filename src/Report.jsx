@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ReportFilter from './ReportFilterTest.jsx';

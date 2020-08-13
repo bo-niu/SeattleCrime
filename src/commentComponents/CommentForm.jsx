@@ -1,5 +1,6 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-access-state-in-setstate */
 import React, { Component } from 'react';
 import UserContext from '../UserContext.js';
 

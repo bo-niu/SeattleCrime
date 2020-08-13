@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React, { PureComponent } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label,

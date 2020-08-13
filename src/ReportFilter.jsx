@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 import {
   Col, Panel, Form, FormGroup, FormControl, ControlLabel,
@@ -28,7 +26,7 @@ class ReportFilter extends React.Component {
   }
 
   render() {
-    const { crime, district, onApplyFilter } = this.props;
+    const { crime, district } = this.props;
 
     return (
       <Panel>

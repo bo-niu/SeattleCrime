@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 function getVarsFromHomeURL(search) {
   const params = new URLSearchParams(search);
   const vars = {};

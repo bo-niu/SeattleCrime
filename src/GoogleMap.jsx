@@ -1,5 +1,4 @@
 /* eslint-disable react/prefer-stateless-function */
-/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker.jsx';
@@ -13,6 +12,7 @@ class GoogleMap extends React.Component {
     // console.log(crimes);
     const multipleMarkers = crimes.map((crime, i) => (
       <Marker
+        // eslint-disable-next-line react/no-array-index-key
         key={i}
         lat={crime.Latitude}
         lng={crime.Longitude}

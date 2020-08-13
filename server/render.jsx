@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router-dom';

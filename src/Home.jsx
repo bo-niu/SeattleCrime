@@ -1,7 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import GoogleMap from './GoogleMap.jsx';

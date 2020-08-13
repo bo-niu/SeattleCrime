@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 import React from 'react';
 
 export default function Comment(props) {
