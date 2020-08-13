@@ -20,7 +20,7 @@ Seattle Crime Data visualization.
 
 In iteration 3, we implemented all the functionalities for our application and the application is fully functional.
 
-Seattle Crime Data visulization deployed on Heroku: https://seattle-crime-ui.herokuapp.com/home
+Seattle Crime Data visualization deployed on Heroku: https://seattle-crime-ui.herokuapp.com/home
 
 Github Repositories:
 
@@ -32,7 +32,7 @@ UI - https://github.ccs.neu.edu/NEU-CS5610-SU20/GroupProject_Robot_UI
 
 Bo: Working on the Discussion page. Implemented the basic ui and api of add comments for a specific crime when user is logged in. Fixed bug in SSR.
 
-Chris:
+Chris: Updated comment box to only work when signed in. General testing and debugging.
 
 Yifei: Added styles to comments, formatted string output and sorted comments to make it readable. Resolved long-lasting react warnings in developer console.  
 
