@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+/* eslint linebreak-style: ["error", "windows"] */
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import graphQLFetch from './graphQLFetch.js';

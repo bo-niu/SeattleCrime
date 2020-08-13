@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';

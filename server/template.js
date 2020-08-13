@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import serialize from 'serialize-javascript';
 
 export default function template(body, initialData, userData) {

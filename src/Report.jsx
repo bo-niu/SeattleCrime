@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ReportFilter from './ReportFilterTest.jsx';
@@ -17,8 +19,6 @@ class Report extends React.Component {
       }
     }`;
     const result = await graphQLFetch(query, inputVars, showError);
-    // console.log('get countvsyear: ');
-    // console.log(result);
     return result;
   }
 

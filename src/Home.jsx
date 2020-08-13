@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import GoogleMap from './GoogleMap.jsx';
@@ -16,7 +18,7 @@ class Home extends React.Component {
     const vars = util.getVarsFromHomeURL(search);
     const inputVars = { input: vars };
     let query = `query crimeCount($input: FilterInput!) {
-      crimeCount(input: $input) 
+      crimeCount(input: $input)
     }`;
     const result = {};
     const countObj = await graphQLFetch(query, inputVars, showError);

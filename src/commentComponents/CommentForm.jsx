@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React, { Component } from 'react';
 import UserContext from '../UserContext.js';
 

@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import Discussion from './Discussion.jsx';
 import Report from './Report.jsx';
 import Home from './Home.jsx';
