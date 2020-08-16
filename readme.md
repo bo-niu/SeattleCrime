@@ -8,8 +8,6 @@ Hi, this is the repo for [Seattle Crime website](https://seattle-crime-bo.heroku
 
 Seattle Crime Data visualization.
 
-# Iteration 3
-
 ## Progress and Key features:
 
 - Landing page: successfully implemented user sign-in features with aunthentication
